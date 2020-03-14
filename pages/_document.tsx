@@ -1,7 +1,12 @@
-import Document, { Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+import { description } from '../package.json'
 
-export default class MyDocument extends Document<any> {
+type Props = {
+    styleTags: React.ReactElement
+}
+
+class CustomDocument extends Document<Props> {
     static getInitialProps({ renderPage }: any) {
         const sheet = new ServerStyleSheet()
 
@@ -16,16 +21,20 @@ export default class MyDocument extends Document<any> {
 
     render() {
         return (
-            <html>
+            <Html lang="en">
                 <Head>
-                    <title>Sydney Swafford</title>
+                    <meta name="description" content={description} />
+                    <meta name="viewport" content="width=device-width, initial-scale=1" />
+                    <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
                     {this.props.styleTags}
                 </Head>
                 <body>
                     <Main />
                     <NextScript />
                 </body>
-            </html>
+            </Html>
         )
     }
 }
+
+export default CustomDocument

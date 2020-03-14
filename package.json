@@ -1,5 +1,6 @@
 {
     "name": "app",
+    "description": "A blog by Sydney Swafford",
     "version": "0.1.0",
     "private": true,
     "scripts": {

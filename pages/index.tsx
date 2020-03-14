@@ -1,10 +1,8 @@
 const Home: React.FC = () => {
     return (
-        <div className="container">
-            <main>
-                <h1>sydneyswafford.com</h1>
-            </main>
-        </div>
+        <main>
+            <h1>sydneyswafford.com</h1>
+        </main>
     )
 }
 
